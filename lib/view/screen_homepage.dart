@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttermessagingapp/view/widgets/category_selector.dart';
 class HomeScreen extends StatefulWidget{
@@ -11,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
@@ -41,6 +43,18 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: <Widget>[
           CategorySelector(),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.0),
+                  topRight: Radius.circular(30.0),
+                )
+              ),
+            ),
+          )
+
 
         ],
       )
