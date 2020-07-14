@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttermessagingapp/view/widgets/category_selector.dart';
+import 'package:fluttermessagingapp/view/widgets/recent_chat.dirt.dart';
 class HomeScreen extends StatefulWidget{
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -51,6 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   topLeft: Radius.circular(30.0),
                   topRight: Radius.circular(30.0),
                 )
+              ),
+              /*Icon of people with recent chats*/
+              child: Column(
+                children: <Widget>[
+                  RecentChats(),
+                ],
               ),
             ),
           )
