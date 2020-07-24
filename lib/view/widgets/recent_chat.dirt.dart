@@ -15,7 +15,7 @@ class RecentChats extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text('Recent Chats',
-                style: TextStyle(
+                  style: TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 14.00,
                   fontWeight: FontWeight.bold,

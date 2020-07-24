@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttermessagingapp/model/message_model.dart';
 import 'package:fluttermessagingapp/view/widgets/category_selector.dart';
 import 'package:fluttermessagingapp/view/widgets/recent_chat.dirt.dart';
+import 'package:fluttermessagingapp/view/widgets/recent_messages.dart';
 class HomeScreen extends StatefulWidget{
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -57,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   RecentChats(),
+                  InboxMessages(),
                 ],
               ),
             ),
