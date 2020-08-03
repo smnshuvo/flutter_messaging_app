@@ -1,4 +1,5 @@
-# fluttermessagingapp
+# Flutter Messaging App
+## by SMN Shuvo
 
 A flutter messaging app
 
