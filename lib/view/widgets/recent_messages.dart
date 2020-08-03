@@ -26,7 +26,12 @@ class InboxMessages extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.only(top: 5.0, bottom: 5.0, right: 20.0),
                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                  decoration: BoxDecoration(color: Color(0xFFFFFEFEE)),
+                  decoration: BoxDecoration(color: chat.unread ? Color(0xFFFFFEFEE) : Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),
+                  ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -49,7 +54,7 @@ class InboxMessages extends StatelessWidget {
                             height: 5.0,
                           ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.50 ,
+                            width: MediaQuery.of(context).size.width * 0.45 ,
                             child: Text(chat.text, style: TextStyle(
                                 color: Colors.blueGrey,
                                 fontSize: 16.0,
@@ -60,8 +65,30 @@ class InboxMessages extends StatelessWidget {
                       ),
                       Column(
                         children: <Widget>[
-                          Text(chat.time),
-                          Text('NEW'),
+                          Text(chat.time,
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                          chat.unread ?
+                          Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal: 8.0
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                color: Colors.red,
+                              ),
+                              child: Text('NEW',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              )
+                          ) : SizedBox.shrink(), // This will make the time shrink to center
                         ],
                       )
                     ],
